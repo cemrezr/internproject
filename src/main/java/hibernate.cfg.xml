@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:mysql://localhost:3306/income</property>
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+      <mapping class="com.test.pluto.CategoryEntity"/>
+      <mapping class="com.test.pluto.CategoryserviceEntity"/>
+      <mapping class="com.test.pluto.CompanyEntity"/>
+      <mapping class="com.test.pluto.CompanyphoneEntity"/>
+      <mapping class="com.test.pluto.CustomerEntity"/>
+      <mapping class="com.test.pluto.CustomerphoneEntity"/>
+      <mapping class="com.test.pluto.DepartmentEntity"/>
+      <mapping class="com.test.pluto.PhoneEntity"/>
+      <mapping class="com.test.pluto.SalesEntity"/>
+      <mapping class="com.test.pluto.ServiceEntity"/>
+      <mapping class="com.test.pluto.ServicesalesEntity"/>
+      <mapping class="com.test.pluto.UserEntity"/>
+      <!-- <property name="connection.username"/> -->
+    <!-- <property name="connection.password"/> -->
+
+    <!-- DB schema will be updated if needed -->
+    <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+  </session-factory>
+</hibernate-configuration>
