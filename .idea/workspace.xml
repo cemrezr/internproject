@@ -7,34 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="397fc3af-f1d4-47e5-915f-6d045ca3f438" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/pluto/controller/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maveninternproject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/maveninternproject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maveninternproject/src/main/java/com/test/pluto/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/maveninternproject/src/main/java/com/test/pluto/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/pluto/CategoryEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/pluto/entities/CategoryEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/pluto/CategoryserviceEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/pluto/entities/CategoryserviceEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/pluto/CompanyEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/pluto/entities/CompanyEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/pluto/CompanyphoneEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/pluto/entities/CompanyphoneEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/pluto/CustomerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/pluto/entities/CustomerEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/pluto/CustomerphoneEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/pluto/entities/CustomerphoneEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/pluto/DepartmentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/pluto/entities/DepartmentEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/pluto/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/pluto/PhoneEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/pluto/entities/PhoneEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/pluto/SalesEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/pluto/entities/SalesEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/pluto/ServiceEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/pluto/entities/ServiceEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/pluto/ServicesalesEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/pluto/entities/ServicesalesEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/pluto/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/pluto/entities/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hibernate.cfg.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/hello.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/hello.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/test/pluto/HelloController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maveninternproject/WEB-INF/classes/com/test/pluto/HelloController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maveninternproject/WEB-INF/jsp/hello.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/maveninternproject/WEB-INF/jsp/hello.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maveninternproject/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maveninternproject/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maveninternproject/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maveninternproject/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maveninternproject/maveninternproject.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maveninternproject/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maveninternproject/src/main/java/com/test/pluto/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maveninternproject/src/main/webapp/WEB-INF/HelloWeb-servlet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maveninternproject/src/main/webapp/WEB-INF/jsp/hello.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maveninternproject/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/test/pluto/entities/HelloController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maveninternproject/WEB-INF/classes/com/test/pluto/entities/HelloController.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -79,11 +65,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/maveninternproject/src/main/java/com/test/pluto/HelloController.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+            <state relative-caret-position="323">
+              <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#0#17#1" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -100,8 +90,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-170">
-              <caret line="44" selection-start-line="44" selection-end-line="44" />
+            <state relative-caret-position="680">
+              <caret line="43" column="17" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -115,51 +114,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/test/pluto/controller/HelloController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/hello.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/test/pluto/entities/CategoryEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-153">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/hibernate.cfg.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/test/pluto/entities/PhoneEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="113">
+              <caret line="40" column="37" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -198,6 +157,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/test/pluto/HelloController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/hello.jsp" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -226,9 +186,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="420" />
-    <option name="y" value="13" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="706" />
+    <option name="y" value="16" />
     <option name="width" value="1198" />
     <option name="height" value="1039" />
   </component>
@@ -250,11 +210,6 @@
             <path>
               <item name="maveninternproject" type="b2602c69:ProjectViewProjectNode" />
               <item name="maveninternproject" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maveninternproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maveninternproject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -262,28 +217,6 @@
               <item name="maveninternproject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maveninternproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maveninternproject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maveninternproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maveninternproject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="pluto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maveninternproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="maveninternproject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -301,22 +234,23 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.40137616" />
     <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\project\maveninternproject\resources" />
-    </key>
-    <key name="ImportMappingsDialog.RecentPackages">
-      <recent name="com.test.pluto" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\project\maveninternproject\src\main\java\com\test\pluto" />
       <recent name="C:\project\maveninternproject\src\main\java\com\test\pluto\hibernate" />
       <recent name="C:\project\maveninternproject\src\main\webapp\WEB-INF" />
+    </key>
+    <key name="ImportMappingsDialog.RecentPackages">
+      <recent name="" />
+      <recent name="com.test.pluto" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\project\maveninternproject\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -489,34 +423,34 @@
       <workItem from="1564642349483" duration="19848000" />
       <workItem from="1564728770323" duration="502000" />
       <workItem from="1564729305073" duration="16022000" />
-      <workItem from="1564983330133" duration="12257000" />
+      <workItem from="1564983330133" duration="19135000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55577000" />
+    <option name="totallyTimeSpent" value="62455000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="Designer" order="1" />
       <window_info id="UI Designer" order="2" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Favorites" order="4" sideWeight="0.5021097" side_tool="true" weight="0.24966443" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.7801047" visible="true" weight="0.295302" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.778481" visible="true" weight="0.295302" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.24966443" />
       <window_info id="Web" order="7" side_tool="true" />
-      <window_info id="Persistence" order="8" sideWeight="0.21989529" side_tool="true" visible="true" weight="0.295302" />
+      <window_info id="Persistence" order="8" sideWeight="0.221519" side_tool="true" visible="true" weight="0.295302" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.3286119" />
+      <window_info anchor="bottom" id="Version Control" order="1" weight="0.3286119" />
+      <window_info anchor="bottom" id="Terminal" order="2" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.50067115" side_tool="true" weight="0.062322944" />
       <window_info anchor="bottom" id="Messages" order="5" weight="0.32719547" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.49932885" visible="true" weight="0.18838526" />
+      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.49932885" weight="0.11189802" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.39518413" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -526,7 +460,7 @@
       <window_info anchor="bottom" id="Application Servers" order="15" weight="0.3286119" />
       <window_info anchor="bottom" id="Database Console" order="16" weight="0.3286119" />
       <window_info anchor="right" id="Palette" order="0" />
-      <window_info anchor="right" id="Database" order="1" visible="true" weight="0.020134227" />
+      <window_info anchor="right" id="Database" order="1" weight="0.21879195" />
       <window_info anchor="right" id="Theme Preview" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
@@ -583,12 +517,6 @@
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/test/pluto/controller/HelloController.java</url>
-          <line>18</line>
-          <properties />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -636,22 +564,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/maveninternproject/src/main/webapp/WEB-INF/jsp/hello.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/HibernateUtil.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/test/pluto/hibernate.cfg.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/test/pluto/HibernateUtil.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://c848cc70-3173-4184-8ba2-a7612b501dda/schema/income/table/company">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state projectRestartId="c245295d-250c-476a-92df-ffcacd011e4f">
@@ -680,13 +595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/maveninternproject/src/main/java/com/test/pluto/HelloController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/test/pluto/entities/CategoryEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-153">
@@ -694,10 +602,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.test.pluto.controller">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/pluto/controller/HelloController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        <state relative-caret-position="174">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -708,30 +623,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/hello.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+        <state relative-caret-position="323">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com.test.pluto.controller">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/maveninternproject/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/hello.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="40" column="37" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-170">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        <state relative-caret-position="680">
+          <caret line="43" column="17" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/test/pluto/controller/HelloController.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="17">
+          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maveninternproject/maveninternproject.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maveninternproject/src/main/java/com/test/pluto/HelloController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maveninternproject/src/main/webapp/WEB-INF/jsp/hello.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#17#1" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -742,7 +688,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>maveninternproject:war</last-edited>
+          <last-edited>maveninternproject:war exploded</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
