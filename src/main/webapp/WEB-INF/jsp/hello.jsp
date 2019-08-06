@@ -1,15 +1,18 @@
-<%@ page contentType="text/html; charset=UTF-8"%>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
-<html>
-<head>
-    <title>Hello world:</title>
-</head>
+<%@ taglib prefix="template" tagdir="/WEB-INF/tags/template" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-
-<body>
-<h2>${message}</h2>
-<table border="1">
-            <c:forEach var="company" items="${companies}"  >
+<template:page>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach var="company" items="${companies}">
             <tr>
                 <td>
                         ${company.id}
@@ -23,10 +26,8 @@
                 <td>
                         ${company.description}
                 </td>
-
             </tr>
-
-            </c:forEach>
-</table>
-</body>
-</html>
+        </c:forEach>
+        </tbody>
+    </table>
+</template:page>
