@@ -48,13 +48,12 @@ public class CompanyController {
     public String removePerson(@PathVariable("id") int id){
 
         this.companyService.removeCompany(id);
-        return "redirect:/companies";
+        return "redirect:/company";
     }
 
     @RequestMapping("/edit/{id}")
     public String editCompany(@PathVariable("id") int id, Model model){
         model.addAttribute("company", this.companyService.getCompanyById(id));
-        model.addAttribute("listCompanies", this.companyService.listCompanies());
         return "company";
     }
 

@@ -26,14 +26,15 @@ public class CompanyDAOImpl implements CompanyDAO {
 
     @Override
     public void addCompany(CompanyEntity c) {
-        Session session = this.getSessionFactory().getCurrentSession();
+        Session session = getSessionFactory().getCurrentSession();
         session.persist(c);
         logger.info("Company saved successfully, Company Details="+c);
     }
 
     @Override
     public void updateCompany(CompanyEntity c) {
-        Session session = this.getSessionFactory().getCurrentSession();
+        Session session = getSessionFactory().openSession();
+        //  Session session = this.getSessionFactory().getCurrentSession();
         session.update(c);
         logger.info("Company updated successfully, Company Details="+c);
     }
@@ -51,21 +52,27 @@ public class CompanyDAOImpl implements CompanyDAO {
 
     @Override
     public CompanyEntity getCompanyById(int id) {
-        Session session = this.getSessionFactory().getCurrentSession();
-        CompanyEntity c = (CompanyEntity) session.load(CompanyEntity.class, new Integer(id));
-        logger.info("Company loaded successfully, Comapany details="+c);
-
-    return c;
+        Session session = getSessionFactory().openSession();
+        try {
+            CompanyEntity company = (CompanyEntity) session.load(CompanyEntity.class, new Integer(id));
+            return company;
+        } finally {
+            session.close();
+        }
     }
 
     @Override
     public void removeCompany(int id) {
-        Session session = this.getSessionFactory().getCurrentSession();
-        CompanyEntity c = (CompanyEntity) session.load(CompanyEntity.class, new Integer(id));
-        if(null != c){
-            session.delete(c);
+       // Session session = this.getSessionFactory().getCurrentSession();
+        Session session = getSessionFactory().openSession();
+        try {
+          final  CompanyEntity c = (CompanyEntity) session.load(CompanyEntity.class, new Integer(id));
+
+        } finally {
+    //    if(null != c){
+            session.close( ); //session.delete(c)
         }
-        logger.info("Company deleted successfully, company details="+c);
+       // logger.info("Company deleted successfully, company details="+c);
 
     }
 }

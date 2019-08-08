@@ -10,7 +10,6 @@
             <th scope="col">First</th>
             <th scope="col">Last</th>
             <th scope="col">Handle</th>
-
         </tr>
         </thead>
         <tbody>
@@ -34,9 +33,10 @@
                     <a class="btn btn-outline-primary" href="${updateLink}"/>Update</a>
                 </td>
                 <td>
-                    <c:url var="removeLink" value="/company/remove/{id}">
-                        <c:param name="id" value="${company.id}"/>
+                    <c:url var="removeLink" value="/company/remove/${company.id}">
+
                     </c:url>
+
                     <a class="btn btn-outline-danger" href="${removeLink}"/>Delete</a>
                 </td>
 
