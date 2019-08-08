@@ -1,4 +1,4 @@
-package com.test.pluto.entities;
+package com.test.pluto.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,8 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "customerphone", schema = "income", catalog = "")
-public class CustomerphoneEntity {
+@Table(name = "companyphone", schema = "income", catalog = "")
+public class CompanyphoneEntity {
     private int id;
 
     @Id
@@ -25,7 +25,7 @@ public class CustomerphoneEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        CustomerphoneEntity that = (CustomerphoneEntity) o;
+        CompanyphoneEntity that = (CompanyphoneEntity) o;
 
         if (id != that.id) return false;
 

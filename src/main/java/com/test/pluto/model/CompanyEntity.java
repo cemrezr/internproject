@@ -1,15 +1,14 @@
-package com.test.pluto.entities;
+package com.test.pluto.model;
 
 import javax.persistence.*;
-import java.sql.Date;
 
 @Entity
-@Table(name = "sales", schema = "income", catalog = "")
-public class SalesEntity {
+@Table(name = "company", schema = "income", catalog = "")
+public class CompanyEntity {
     private int id;
-    private String title;
+    private String name;
     private String description;
-    private Date date;
+    private String slogan;
 
     @Id
     @Column(name = "id")
@@ -22,13 +21,13 @@ public class SalesEntity {
     }
 
     @Basic
-    @Column(name = "title")
-    public String getTitle() {
-        return title;
+    @Column(name = "name")
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Basic
@@ -42,13 +41,13 @@ public class SalesEntity {
     }
 
     @Basic
-    @Column(name = "date")
-    public Date getDate() {
-        return date;
+    @Column(name = "slogan")
+    public String getSlogan() {
+        return slogan;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setSlogan(String slogan) {
+        this.slogan = slogan;
     }
 
     @Override
@@ -56,12 +55,12 @@ public class SalesEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        SalesEntity that = (SalesEntity) o;
+        CompanyEntity that = (CompanyEntity) o;
 
         if (id != that.id) return false;
-        if (title != null ? !title.equals(that.title) : that.title != null) return false;
+        if (name != null ? !name.equals(that.name) : that.name != null) return false;
         if (description != null ? !description.equals(that.description) : that.description != null) return false;
-        if (date != null ? !date.equals(that.date) : that.date != null) return false;
+        if (slogan != null ? !slogan.equals(that.slogan) : that.slogan != null) return false;
 
         return true;
     }
@@ -69,9 +68,9 @@ public class SalesEntity {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (title != null ? title.hashCode() : 0);
+        result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (description != null ? description.hashCode() : 0);
-        result = 31 * result + (date != null ? date.hashCode() : 0);
+        result = 31 * result + (slogan != null ? slogan.hashCode() : 0);
         return result;
     }
 }

@@ -1,10 +1,10 @@
-package com.test.pluto.entities;
+package com.test.pluto.model;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "department", schema = "income", catalog = "")
-public class DepartmentEntity {
+@Table(name = "category", schema = "income", catalog = "")
+public class CategoryEntity {
     private int id;
     private String name;
 
@@ -33,7 +33,7 @@ public class DepartmentEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        DepartmentEntity that = (DepartmentEntity) o;
+        CategoryEntity that = (CategoryEntity) o;
 
         if (id != that.id) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;

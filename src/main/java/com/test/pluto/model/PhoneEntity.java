@@ -1,12 +1,12 @@
-package com.test.pluto.entities;
+package com.test.pluto.model;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "category", schema = "income", catalog = "")
-public class CategoryEntity {
+@Table(name = "phone", schema = "income", catalog = "")
+public class PhoneEntity {
     private int id;
-    private String name;
+    private int number;
 
     @Id
     @Column(name = "id")
@@ -19,13 +19,13 @@ public class CategoryEntity {
     }
 
     @Basic
-    @Column(name = "name")
-    public String getName() {
-        return name;
+    @Column(name = "number")
+    public int getNumber() {
+        return number;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNumber(int number) {
+        this.number = number;
     }
 
     @Override
@@ -33,10 +33,10 @@ public class CategoryEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        CategoryEntity that = (CategoryEntity) o;
+        PhoneEntity that = (PhoneEntity) o;
 
         if (id != that.id) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
+        if (number != that.number) return false;
 
         return true;
     }
@@ -44,7 +44,7 @@ public class CategoryEntity {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + number;
         return result;
     }
 }

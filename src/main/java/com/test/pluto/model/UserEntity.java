@@ -1,13 +1,14 @@
-package com.test.pluto.entities;
+package com.test.pluto.model;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "customer", schema = "income", catalog = "")
-public class CustomerEntity {
+@Table(name = "user", schema = "income", catalog = "")
+public class UserEntity {
     private int id;
     private String name;
     private String email;
+    private String password;
 
     @Id
     @Column(name = "id")
@@ -39,16 +40,27 @@ public class CustomerEntity {
         this.email = email;
     }
 
+    @Basic
+    @Column(name = "password")
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        CustomerEntity that = (CustomerEntity) o;
+        UserEntity that = (UserEntity) o;
 
         if (id != that.id) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
         if (email != null ? !email.equals(that.email) : that.email != null) return false;
+        if (password != null ? !password.equals(that.password) : that.password != null) return false;
 
         return true;
     }
@@ -58,6 +70,7 @@ public class CustomerEntity {
         int result = id;
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (email != null ? email.hashCode() : 0);
+        result = 31 * result + (password != null ? password.hashCode() : 0);
         return result;
     }
 }

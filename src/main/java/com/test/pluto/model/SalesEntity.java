@@ -1,14 +1,15 @@
-package com.test.pluto.entities;
+package com.test.pluto.model;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity
-@Table(name = "company", schema = "income", catalog = "")
-public class CompanyEntity {
+@Table(name = "sales", schema = "income", catalog = "")
+public class SalesEntity {
     private int id;
-    private String name;
+    private String title;
     private String description;
-    private String slogan;
+    private Date date;
 
     @Id
     @Column(name = "id")
@@ -21,13 +22,13 @@ public class CompanyEntity {
     }
 
     @Basic
-    @Column(name = "name")
-    public String getName() {
-        return name;
+    @Column(name = "title")
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     @Basic
@@ -41,13 +42,13 @@ public class CompanyEntity {
     }
 
     @Basic
-    @Column(name = "slogan")
-    public String getSlogan() {
-        return slogan;
+    @Column(name = "date")
+    public Date getDate() {
+        return date;
     }
 
-    public void setSlogan(String slogan) {
-        this.slogan = slogan;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     @Override
@@ -55,12 +56,12 @@ public class CompanyEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        CompanyEntity that = (CompanyEntity) o;
+        SalesEntity that = (SalesEntity) o;
 
         if (id != that.id) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
+        if (title != null ? !title.equals(that.title) : that.title != null) return false;
         if (description != null ? !description.equals(that.description) : that.description != null) return false;
-        if (slogan != null ? !slogan.equals(that.slogan) : that.slogan != null) return false;
+        if (date != null ? !date.equals(that.date) : that.date != null) return false;
 
         return true;
     }
@@ -68,9 +69,9 @@ public class CompanyEntity {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (title != null ? title.hashCode() : 0);
         result = 31 * result + (description != null ? description.hashCode() : 0);
-        result = 31 * result + (slogan != null ? slogan.hashCode() : 0);
+        result = 31 * result + (date != null ? date.hashCode() : 0);
         return result;
     }
 }

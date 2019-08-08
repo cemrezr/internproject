@@ -1,13 +1,13 @@
-package com.test.pluto.entities;
+package com.test.pluto.model;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "service", schema = "income", catalog = "")
-public class ServiceEntity {
+@Table(name = "customer", schema = "income", catalog = "")
+public class CustomerEntity {
     private int id;
     private String name;
-    private int price;
+    private String email;
 
     @Id
     @Column(name = "id")
@@ -30,13 +30,13 @@ public class ServiceEntity {
     }
 
     @Basic
-    @Column(name = "price")
-    public int getPrice() {
-        return price;
+    @Column(name = "email")
+    public String getEmail() {
+        return email;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
@@ -44,11 +44,11 @@ public class ServiceEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ServiceEntity that = (ServiceEntity) o;
+        CustomerEntity that = (CustomerEntity) o;
 
         if (id != that.id) return false;
-        if (price != that.price) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
+        if (email != null ? !email.equals(that.email) : that.email != null) return false;
 
         return true;
     }
@@ -57,7 +57,7 @@ public class ServiceEntity {
     public int hashCode() {
         int result = id;
         result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + price;
+        result = 31 * result + (email != null ? email.hashCode() : 0);
         return result;
     }
 }

@@ -1,6 +1,7 @@
 <%@ taglib prefix="template" tagdir="/WEB-INF/tags/template" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+
 <template:page>
     <table class="table">
         <thead>
@@ -9,6 +10,7 @@
             <th scope="col">First</th>
             <th scope="col">Last</th>
             <th scope="col">Handle</th>
+
         </tr>
         </thead>
         <tbody>
@@ -26,6 +28,18 @@
                 <td>
                         ${company.description}
                 </td>
+                <td>
+                    <c:url var="updateLink" value="/company/edit/${company.id}">
+                    </c:url>
+                    <a class="btn btn-outline-primary" href="${updateLink}"/>Update</a>
+                </td>
+                <td>
+                    <c:url var="removeLink" value="/company/remove/{id}">
+                        <c:param name="id" value="${company.id}"/>
+                    </c:url>
+                    <a class="btn btn-outline-danger" href="${removeLink}"/>Delete</a>
+                </td>
+
             </tr>
         </c:forEach>
         </tbody>

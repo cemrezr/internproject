@@ -10,18 +10,18 @@
     <property name="connection.username">root</property>
     <property name="connection.password"></property>
 
-      <mapping class="com.test.pluto.entities.CategoryEntity"/>
-      <mapping class="com.test.pluto.entities.CategoryserviceEntity"/>
-      <mapping class="com.test.pluto.entities.CompanyEntity"/>
-      <mapping class="com.test.pluto.entities.CompanyphoneEntity"/>
-      <mapping class="com.test.pluto.entities.CustomerEntity"/>
-      <mapping class="com.test.pluto.entities.CustomerphoneEntity"/>
-      <mapping class="com.test.pluto.entities.DepartmentEntity"/>
-      <mapping class="com.test.pluto.entities.PhoneEntity"/>
-      <mapping class="com.test.pluto.entities.SalesEntity"/>
-      <mapping class="com.test.pluto.entities.ServiceEntity"/>
-      <mapping class="com.test.pluto.entities.ServicesalesEntity"/>
-      <mapping class="com.test.pluto.entities.UserEntity"/>
+      <mapping class="com.test.pluto.model.CategoryEntity"/>
+      <mapping class="com.test.pluto.model.CategoryserviceEntity"/>
+      <mapping class="com.test.pluto.model.CompanyEntity"/>
+      <mapping class="com.test.pluto.model.CompanyphoneEntity"/>
+      <mapping class="com.test.pluto.model.CustomerEntity"/>
+      <mapping class="com.test.pluto.model.CustomerphoneEntity"/>
+      <mapping class="com.test.pluto.model.DepartmentEntity"/>
+      <mapping class="com.test.pluto.model.PhoneEntity"/>
+      <mapping class="com.test.pluto.model.SalesEntity"/>
+      <mapping class="com.test.pluto.model.ServiceEntity"/>
+      <mapping class="com.test.pluto.model.ServicesalesEntity"/>
+      <mapping class="com.test.pluto.model.UserEntity"/>
 
     <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->

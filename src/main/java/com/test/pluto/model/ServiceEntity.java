@@ -1,14 +1,13 @@
-package com.test.pluto.entities;
+package com.test.pluto.model;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user", schema = "income", catalog = "")
-public class UserEntity {
+@Table(name = "service", schema = "income", catalog = "")
+public class ServiceEntity {
     private int id;
     private String name;
-    private String email;
-    private String password;
+    private int price;
 
     @Id
     @Column(name = "id")
@@ -31,23 +30,13 @@ public class UserEntity {
     }
 
     @Basic
-    @Column(name = "email")
-    public String getEmail() {
-        return email;
+    @Column(name = "price")
+    public int getPrice() {
+        return price;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    @Basic
-    @Column(name = "password")
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     @Override
@@ -55,12 +44,11 @@ public class UserEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        UserEntity that = (UserEntity) o;
+        ServiceEntity that = (ServiceEntity) o;
 
         if (id != that.id) return false;
+        if (price != that.price) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (email != null ? !email.equals(that.email) : that.email != null) return false;
-        if (password != null ? !password.equals(that.password) : that.password != null) return false;
 
         return true;
     }
@@ -69,8 +57,7 @@ public class UserEntity {
     public int hashCode() {
         int result = id;
         result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (email != null ? email.hashCode() : 0);
-        result = 31 * result + (password != null ? password.hashCode() : 0);
+        result = 31 * result + price;
         return result;
     }
 }
