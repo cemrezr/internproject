@@ -1,4 +1,4 @@
-package com.test.pluto.model;
+package com.test.pluto;
 
 import javax.persistence.*;
 

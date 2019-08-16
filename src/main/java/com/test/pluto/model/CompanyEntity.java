@@ -1,4 +1,4 @@
-package com.test.pluto.model;
+package com.test.pluto;
 
 import javax.persistence.*;
 
@@ -9,6 +9,7 @@ public class CompanyEntity {
     private String name;
     private String description;
     private String slogan;
+    private byte remove;
 
     @Id
     @Column(name = "id")
@@ -50,6 +51,16 @@ public class CompanyEntity {
         this.slogan = slogan;
     }
 
+    @Basic
+    @Column(name = "remove")
+    public byte getRemove() {
+        return remove;
+    }
+
+    public void setRemove(byte remove) {
+        this.remove = remove;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -58,6 +69,7 @@ public class CompanyEntity {
         CompanyEntity that = (CompanyEntity) o;
 
         if (id != that.id) return false;
+        if (remove != that.remove) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
         if (description != null ? !description.equals(that.description) : that.description != null) return false;
         if (slogan != null ? !slogan.equals(that.slogan) : that.slogan != null) return false;
@@ -71,6 +83,7 @@ public class CompanyEntity {
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (description != null ? description.hashCode() : 0);
         result = 31 * result + (slogan != null ? slogan.hashCode() : 0);
+        result = 31 * result + (int) remove;
         return result;
     }
 }

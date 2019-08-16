@@ -7,9 +7,9 @@
         <thead>
         <tr>
             <th scope="col">Id</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Name</th>
+            <th scope="col">Slogan</th>
+            <th scope="col">Description</th>
         </tr>
         </thead>
         <tbody>
