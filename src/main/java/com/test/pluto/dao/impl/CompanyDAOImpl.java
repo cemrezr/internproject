@@ -1,8 +1,6 @@
 package com.test.pluto.dao;
 
 
-import java.util.List;
-
 import com.test.pluto.model.CompanyEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -11,6 +9,8 @@ import org.hibernate.cfg.Configuration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public class CompanyDAOImpl implements CompanyDAO {
@@ -43,7 +43,7 @@ public class CompanyDAOImpl implements CompanyDAO {
     public List<CompanyEntity> listCompanies() {
         Session session = getSessionFactory().openSession();
         try {
-            final List<CompanyEntity> companiesList = session.createQuery("from CompanyEntity ").list();
+            final List<CompanyEntity> companiesList = session.createQuery("from CompanyEntity where remove=0").list();
             return companiesList;
         } finally {
             session.close();
@@ -67,10 +67,14 @@ public class CompanyDAOImpl implements CompanyDAO {
         Session session = getSessionFactory().openSession();
         try {
           final  CompanyEntity c = (CompanyEntity) session.load(CompanyEntity.class, new Integer(id));
-
+           session.beginTransaction();
+           c.setRemove((byte) 1);
+           session.update(c);
+           session.getTransaction().commit();
+           listCompanies();
         } finally {
     //    if(null != c){
-            session.close( ); //session.delete(c)
+            session.close(); //session.delete(c)
         }
        // logger.info("Company deleted successfully, company details="+c);
 

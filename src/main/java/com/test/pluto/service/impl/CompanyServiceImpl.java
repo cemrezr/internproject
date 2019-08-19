@@ -10,7 +10,7 @@ import com.test.pluto.dao.CompanyDAO;
 
 
 @Service()
-public class CompanyServiceImlp implements CompanyService {
+class CompanyServiceImpl implements CompanyService {
 
     @Autowired
     private CompanyDAO companyDAO;
@@ -18,11 +18,11 @@ public class CompanyServiceImlp implements CompanyService {
     public void setCompanyDAO(CompanyDAO companyDAO) {
         this.companyDAO = companyDAO;
     }
+
     @Override
     @Transactional
     public void addCompany(CompanyEntity c) {
         this.companyDAO.addCompany(c);
-
     }
 
     @Override
@@ -47,6 +47,5 @@ public class CompanyServiceImlp implements CompanyService {
     @Transactional
     public void removeCompany(int id) {
         this.companyDAO.removeCompany(id);
-
     }
 }
