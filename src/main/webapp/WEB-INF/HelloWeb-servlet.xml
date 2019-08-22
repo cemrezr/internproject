@@ -7,9 +7,38 @@ http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
 
-<context:component-scan base-package="com.test.pluto"/>
+    <context:component-scan base-package="com.test.pluto"/>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/jsp/" />
-        <property name="suffix" value=".jsp" />
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
     </bean>
+
+
+    <bean id="abstractConverter" class="com.test.pluto.converter.AbstractConverter" abstract="true"/>
+    <bean id="defaultCompanyPopulator" class="com.test.pluto.populator.impl.DefaultCompanyPopulator"/>
+    <bean id="defaultCompanyReversePopulator" class="com.test.pluto.populator.impl.DefaultCompanyReversePopulator"/>
+    <bean id="abstractPopulatingConverter" class="com.test.pluto.converter.impl.AbstractPopulatingConverter"
+          abstract="true"/>
+
+
+    <bean id="defaultCompanyConverter" parent="abstractPopulatingConverter">
+        <property name="populators">
+            <list>
+                <ref bean="defaultCompanyPopulater"></ref>
+            </list>
+        </property>
+        <property name="aClass" value="com.test.pluto.dto.CompanyDTO"/>
+    </bean>
+
+    <bean id="defaultCompanyReverseConverter" parent="abstractPopulatingConverter">
+        <property name="populators">
+            <list>
+                <ref bean="defaultCompanyReversePopulater"></ref>
+            </list>
+        </property>
+        <property name="aClass" value="com.test.pluto.model.CompanyEntity"/>
+
+    </bean>
+
+
 </beans>

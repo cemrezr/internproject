@@ -23,7 +23,7 @@
       <mapping class="com.test.pluto.model.ServicesalesEntity"/>
       <mapping class="com.test.pluto.model.UserEntity"/>
 
-    <!-- <property name="connection.username"/> -->
+      <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
     <!-- DB schema will be updated if needed -->
      <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->

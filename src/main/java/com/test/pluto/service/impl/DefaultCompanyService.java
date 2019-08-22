@@ -1,7 +1,8 @@
-package com.test.pluto.service;
+package com.test.pluto.service.impl;
 import java.util.List;
 
 import com.test.pluto.model.CompanyEntity;
+import com.test.pluto.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,7 +11,7 @@ import com.test.pluto.dao.CompanyDAO;
 
 
 @Service()
-class CompanyServiceImpl implements CompanyService {
+class DefaultCompanyService implements CompanyService {
 
     @Autowired
     private CompanyDAO companyDAO;
@@ -21,15 +22,8 @@ class CompanyServiceImpl implements CompanyService {
 
     @Override
     @Transactional
-    public void addCompany(CompanyEntity c) {
-        this.companyDAO.addCompany(c);
-    }
-
-    @Override
-    @Transactional
-    public void updateCompany(CompanyEntity c) {
-        this.companyDAO.updateCompany(c);
-
+   public void saveOrUpdateCompany (CompanyEntity c){
+        this.companyDAO.saveOrUpdateCompany(c);
     }
 
     @Override

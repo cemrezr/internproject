@@ -1,77 +1,72 @@
 package com.test.pluto.controller;
 
-import com.test.pluto.model.CompanyEntity;
-import com.test.pluto.service.CompanyService;
+import com.test.pluto.dto.CompanyDTO;
+import com.test.pluto.facade.CompanyFacade;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/company")
 @Controller
 public class CompanyController {
 
-    @Autowired(required=true)
-    private CompanyService companyService;
+
+    @Autowired(required = true)
+    private CompanyFacade companyFacade;
+
+    private Logger logger = LoggerFactory.getLogger(CompanyController.class);
 
 
-    public void setCompanyService(CompanyService cs){
-        this.companyService = cs;
+    public void setCompanyFacade(CompanyFacade cf) {
+        this.companyFacade = cf;
     }
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String listCompanies(Model model) {
-        model.addAttribute("companies", this.companyService.listCompanies());
-        return "company";
+        model.addAttribute("companies", this.companyFacade.listCompanies());
+        return "companyList";
     }
 
     //For add and update person both
-    @RequestMapping(value= "/add", method = RequestMethod.POST)
-    public String addCompany(@ModelAttribute("company") CompanyEntity c){
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
+    public String addCompanyGET(@ModelAttribute("company") CompanyDTO companyDTO) {
 
-        if(c.getId() == 0){
-            //new person, add it
-            this.companyService.addCompany(c);
-        }else{
-            //existing person, call update
-            this.companyService.updateCompany(c);
-        }
 
-        return "redirect:/companies";
+        return "companyForm";
 
     }
 
-    @RequestMapping("/remove/{id}")
-    public String removePerson(@PathVariable("id") int id){
-
-        this.companyService.removeCompany(id);
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public String addCompanyPost(@ModelAttribute("company") CompanyDTO companyDTO) {
+        this.companyFacade.saveOrUpdateCompany(companyDTO);
         return "redirect:/company";
     }
 
-    @RequestMapping("/edit/{id}")
-    public String editCompany(@PathVariable("id") int id, Model model){
-        model.addAttribute("company", this.companyService.getCompanyById(id));
-        return "company";
+
+    @RequestMapping("/remove/{id}")
+    public String removePerson(@PathVariable("id") int id) {
+        this.companyFacade.removeCompany(id);
+        return "redirect:/company";
+    }
+
+
+    //Burada bilgileri companyEntitiye işleyeceğiz.
+    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
+    public String editCompanyGet(@PathVariable("id") int id, Model model) {
+        CompanyDTO companyDTO = companyFacade.getCompanyByID(id);
+        model.addAttribute("company", companyDTO);
+        return "companyForm";
+    }
+
+    //Burada bilgileri alıcaz.
+    @RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
+    public String editCompanyPost(@ModelAttribute("company") CompanyDTO companyDTO) {
+        this.companyFacade.saveOrUpdateCompany(companyDTO);
+        return "companyForm";
     }
 
 }
-  /*  @RequestMapping(method = RequestMethod.GET)
-    public String printHello(ModelMap model) {
-        model.addAttribute("message", "Hello Spring MVC Framework ");
-
-        Configuration configuration = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(CompanyEntity.class);
-
-        SessionFactory factory = configuration.buildSessionFactory();
-        Session session = factory.openSession();
-
-        Query query = (Query) session.createQuery("from CompanyEntity ");
-        List<CompanyEntity> list =  query.list();
-        model.addAttribute("companies",list);
-
-
-        return "hello";
-    }*/
 

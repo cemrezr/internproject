@@ -1,6 +1,7 @@
-package com.test.pluto.dao;
+package com.test.pluto.dao.impl;
 
 
+import com.test.pluto.dao.CompanyDAO;
 import com.test.pluto.model.CompanyEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -9,12 +10,13 @@ import org.hibernate.cfg.Configuration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Repository
-public class CompanyDAOImpl implements CompanyDAO {
-    private static final Logger logger = LoggerFactory.getLogger(CompanyDAOImpl.class);
+public class DefaultCompanyDAO implements CompanyDAO {
+    private static final Logger logger = LoggerFactory.getLogger(DefaultCompanyDAO.class);
 
     private static SessionFactory getSessionFactory() {
         Configuration configuration = new Configuration().configure().configure("hibernate.cfg.xml").addAnnotatedClass(CompanyEntity.class);
@@ -25,19 +27,18 @@ public class CompanyDAOImpl implements CompanyDAO {
     }
 
     @Override
-    public void addCompany(CompanyEntity c) {
-        Session session = getSessionFactory().getCurrentSession();
-        session.persist(c);
-        logger.info("Company saved successfully, Company Details="+c);
+    @Transactional
+    public void saveOrUpdateCompany(CompanyEntity c){
+        Session session =getSessionFactory().openSession();
+        try{
+            session.beginTransaction();
+            session.saveOrUpdate(c);
+            session.getTransaction().commit();
+        }finally {
+            session.close();
+        }
     }
 
-    @Override
-    public void updateCompany(CompanyEntity c) {
-        Session session = getSessionFactory().openSession();
-        //  Session session = this.getSessionFactory().getCurrentSession();
-        session.update(c);
-        logger.info("Company updated successfully, Company Details="+c);
-    }
 
     @Override
     public List<CompanyEntity> listCompanies() {
@@ -54,7 +55,7 @@ public class CompanyDAOImpl implements CompanyDAO {
     public CompanyEntity getCompanyById(int id) {
         Session session = getSessionFactory().openSession();
         try {
-            CompanyEntity company = (CompanyEntity) session.load(CompanyEntity.class, new Integer(id));
+            CompanyEntity company = (CompanyEntity) session.get(CompanyEntity.class, new Integer(id));
             return company;
         } finally {
             session.close();
@@ -62,11 +63,12 @@ public class CompanyDAOImpl implements CompanyDAO {
     }
 
     @Override
+    @Transactional
     public void removeCompany(int id) {
        // Session session = this.getSessionFactory().getCurrentSession();
         Session session = getSessionFactory().openSession();
         try {
-          final  CompanyEntity c = (CompanyEntity) session.load(CompanyEntity.class, new Integer(id));
+            CompanyEntity c = (CompanyEntity) session.get(CompanyEntity.class, new Integer(id));
            session.beginTransaction();
            c.setRemove((byte) 1);
            session.update(c);
