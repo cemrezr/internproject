@@ -2,15 +2,23 @@ package com.test.pluto.controller;
 
 import com.test.pluto.dto.CompanyDTO;
 import com.test.pluto.facade.CompanyFacade;
+
+import com.test.pluto.model.CompanyEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
+
+import java.util.List;
 
 @RequestMapping("/company")
-@Controller
+@RestController
 public class CompanyController {
 
 
@@ -24,49 +32,68 @@ public class CompanyController {
         this.companyFacade = cf;
     }
 
-    @RequestMapping(value = "", method = RequestMethod.GET)
-    public String listCompanies(Model model) {
-        model.addAttribute("companies", this.companyFacade.listCompanies());
-        return "companyList";
-    }
-
-    //For add and update person both
-    @RequestMapping(value = "/add", method = RequestMethod.GET)
-    public String addCompanyGET(@ModelAttribute("company") CompanyDTO companyDTO) {
-
-
-        return "companyForm";
-
-    }
-
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String addCompanyPost(@ModelAttribute("company") CompanyDTO companyDTO) {
-        this.companyFacade.saveOrUpdateCompany(companyDTO);
-        return "redirect:/company";
+    @GetMapping(value = "", produces = "application/json")
+    @ResponseBody
+    public List<CompanyDTO> listCompanies() {
+        List<CompanyDTO> companyDTOList = companyFacade.listCompanies();
+        return companyDTOList;
     }
 
 
-    @RequestMapping("/remove/{id}")
-    public String removePerson(@PathVariable("id") int id) {
-        this.companyFacade.removeCompany(id);
-        return "redirect:/company";
+
+
+    @PostMapping(value = "", produces = "application/json", consumes = "application/json")
+    @ResponseBody
+    public CompanyDTO addCompanyPost(@RequestBody CompanyDTO companyDTO) {
+        this.companyFacade.saveCompany(companyDTO);
+        return companyDTO;
     }
 
 
-    //Burada bilgileri companyEntitiye işleyeceğiz.
-    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
-    public String editCompanyGet(@PathVariable("id") int id, Model model) {
-        CompanyDTO companyDTO = companyFacade.getCompanyByID(id);
-        model.addAttribute("company", companyDTO);
-        return "companyForm";
+    @RequestMapping(value = "",method = RequestMethod.PUT
+            ,produces = "application/json",consumes = "application/json")
+    @ResponseBody
+    public void bulkUpdate(@RequestBody CompanyDTO companyDTO){
+        companyFacade.bulkUpdateCompany(companyDTO);
     }
 
-    //Burada bilgileri alıcaz.
-    @RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
-    public String editCompanyPost(@ModelAttribute("company") CompanyDTO companyDTO) {
-        this.companyFacade.saveOrUpdateCompany(companyDTO);
-        return "companyForm";
+    @RequestMapping(value = "/{id}",method = RequestMethod.GET
+            ,produces = "application/json",consumes = "application/json")
+    @ResponseBody
+    public CompanyDTO getCompanyByID(@PathVariable("id") int id){
+        return companyFacade.getCompanyByID(id);
     }
+
+    @RequestMapping(value = "/{id}",method = RequestMethod.PUT
+            ,produces = "application/json",consumes = "application/json")
+    @ResponseBody
+    public CompanyDTO updateCompanyByID(@PathVariable("id") int id,@RequestBody CompanyDTO companyDTO) {
+        companyFacade.updateCompany(companyDTO);
+        return companyDTO;
+    }
+
+
+
+    @DeleteMapping(value = "/{id}", produces = "application/json", consumes = "application/json")
+    @ResponseBody
+    public void deleteCompany(@PathVariable("id") int id) {
+        companyFacade.deleteCompany(id);
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.PATCH, produces = "application/json")
+    @ResponseBody
+    public CompanyDTO patchPost(@PathVariable("id") int id, @RequestBody CompanyDTO companyDTO) {
+        companyDTO.setId(id);
+        companyFacade.atomicUpdateCompany(companyDTO);
+        return companyDTO;
+    }
+
+    @RequestMapping(value = "",method = RequestMethod.DELETE
+            ,produces = "application/json",consumes = "application/json")
+    @ResponseBody
+    public void deleteAllCompanies(@RequestBody List<CompanyDTO> companyDTOList){
+        companyFacade.deleteAllCompany(companyDTOList);
+    }
+
 
 }
-

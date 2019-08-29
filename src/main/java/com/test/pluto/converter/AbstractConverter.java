@@ -24,9 +24,12 @@ public abstract class AbstractConverter<K, V> implements Converter<K, V> {
 
     @Override
     public V converter(K source) {
+        return converter(source,createInstance());
+    }
 
+    @Override
+    public V converter(K source,V target) {
         final List<Populator<K, V>> list = getPopulators();
-        V target = createInstance();
         if (Objects.nonNull(list) && !list.isEmpty()) {
             for (final Populator<K, V> populator : list) {
                 populator.populate(source, target);

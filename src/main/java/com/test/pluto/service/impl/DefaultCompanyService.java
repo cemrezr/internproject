@@ -1,4 +1,5 @@
 package com.test.pluto.service.impl;
+
 import java.util.List;
 
 import com.test.pluto.model.CompanyEntity;
@@ -22,13 +23,19 @@ class DefaultCompanyService implements CompanyService {
 
     @Override
     @Transactional
-   public void saveOrUpdateCompany (CompanyEntity c){
-        this.companyDAO.saveOrUpdateCompany(c);
+    public void updateCompany(CompanyEntity c) {
+        this.companyDAO.updateCompany(c);
+    }
+
+    @Override
+    @Transactional
+    public void saveCompany(CompanyEntity c) {
+        this.companyDAO.saveCompany(c);
     }
 
     @Override
     public List<CompanyEntity> listCompanies() {
-        return  this.companyDAO.listCompanies();
+        return this.companyDAO.listCompanies();
     }
 
     @Override
@@ -37,9 +44,16 @@ class DefaultCompanyService implements CompanyService {
         return this.companyDAO.getCompanyById(id);
     }
 
+
     @Override
-    @Transactional
-    public void removeCompany(int id) {
-        this.companyDAO.removeCompany(id);
+    public void deleteAllCompany(List<CompanyEntity> companyEntityList) {
+        this.companyDAO.deleteAllCompany(companyEntityList);
+
+
+    }
+
+    @Override
+    public void deleteCompany(CompanyEntity c) {
+        this.companyDAO.deleteCompany(c);
     }
 }

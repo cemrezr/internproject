@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.PersistenceException;
 import java.util.List;
 
 @Repository
@@ -28,17 +29,29 @@ public class DefaultCompanyDAO implements CompanyDAO {
 
     @Override
     @Transactional
-    public void saveOrUpdateCompany(CompanyEntity c){
-        Session session =getSessionFactory().openSession();
-        try{
+    public void updateCompany(CompanyEntity c) {
+        Session session = getSessionFactory().openSession();
+        try {
             session.beginTransaction();
-            session.saveOrUpdate(c);
+            session.update(c);
             session.getTransaction().commit();
-        }finally {
+        } finally {
             session.close();
         }
     }
 
+    @Override
+    @Transactional
+    public void saveCompany(CompanyEntity c) {
+        Session session = getSessionFactory().openSession();
+        try {
+            session.beginTransaction();
+            session.save(c);
+            session.getTransaction().commit();
+        } finally {
+            session.close();
+        }
+    }
 
     @Override
     public List<CompanyEntity> listCompanies() {
@@ -62,24 +75,49 @@ public class DefaultCompanyDAO implements CompanyDAO {
         }
     }
 
+
+
+
     @Override
     @Transactional
-    public void removeCompany(int id) {
-       // Session session = this.getSessionFactory().getCurrentSession();
+    public void deleteCompany(CompanyEntity c) {
         Session session = getSessionFactory().openSession();
         try {
-            CompanyEntity c = (CompanyEntity) session.get(CompanyEntity.class, new Integer(id));
-           session.beginTransaction();
-           c.setRemove((byte) 1);
-           session.update(c);
-           session.getTransaction().commit();
-           listCompanies();
+            session.beginTransaction();
+            session.delete(c);
+            session.getTransaction().commit();
+
         } finally {
-    //    if(null != c){
-            session.close(); //session.delete(c)
+            session.close();
         }
-       // logger.info("Company deleted successfully, company details="+c);
+    }
+        @Override
+                @Transactional
+        public void deleteAllCompany(List<CompanyEntity> companyEntityList) {
+            Session session= getSessionFactory().openSession();
+            try{
+                session.beginTransaction();
+                for(CompanyEntity companyEntity: companyEntityList){
+                    session.delete(companyEntity);
+                }
+                session.getTransaction().commit();
+
+
+            }catch(PersistenceException persistenceException){
+                System.out.println("Can not delete this objection");
+            }
+
+
+            finally {
+                session.close();;
+            }
+
+        }
+
+
 
     }
-}
+
+
+
 

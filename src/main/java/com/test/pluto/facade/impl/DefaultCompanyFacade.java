@@ -28,6 +28,10 @@ public class DefaultCompanyFacade implements CompanyFacade {
     @Qualifier("defaultCompanyReverseConverter")
     private Converter<CompanyDTO, CompanyEntity> companyReverseConverter;
 
+    @Autowired
+    @Qualifier("defaultCompanyAtomicReverseConverter")
+    private Converter<CompanyDTO, CompanyEntity> companyAtomicReverseConverter;
+
 
     public Converter<CompanyEntity, CompanyDTO> getCompanyConverter() {
         return companyConverter;
@@ -35,22 +39,24 @@ public class DefaultCompanyFacade implements CompanyFacade {
 
 
     @Override
-    public void removeCompany(int id) {
-        companyService.removeCompany(id);
+    public void saveCompany(CompanyDTO companyDTO) {
+        CompanyEntity companyEntity = new CompanyEntity();
+        companyEntity = companyReverseConverter.converter(companyDTO);
+        companyService.saveCompany(companyEntity);
     }
 
     @Override
-    public void saveOrUpdateCompany(CompanyDTO companyDTO) {
+    public void updateCompany(CompanyDTO companyDTO) {
         CompanyEntity companyEntity = new CompanyEntity();
-       companyEntity=companyReverseConverter.converter(companyDTO);
-        companyService.saveOrUpdateCompany(companyEntity);
+        companyEntity = companyReverseConverter.converter(companyDTO);
+        companyService.updateCompany(companyEntity);
     }
 
     @Override
     public List<CompanyDTO> listCompanies() {
         //  List<CompanyDTO> companyDTOList = new ArrayList<CompanyDTO>();
         List<CompanyEntity> companyEntities = companyService.listCompanies();
-        List<CompanyDTO> companies=companyConverter.convertAll(companyEntities);
+        List<CompanyDTO> companies = companyConverter.convertAll(companyEntities);
         return companies;
 
     }
@@ -59,7 +65,41 @@ public class DefaultCompanyFacade implements CompanyFacade {
     public CompanyDTO getCompanyByID(int id) {
         CompanyDTO companyDTO = new CompanyDTO();
         CompanyEntity companyEntity = companyService.getCompanyById(id);
-        companyDTO=companyConverter.converter(companyEntity);
+        companyDTO = companyConverter.converter(companyEntity);
         return companyDTO;
+    }
+
+    @Override
+    public void deleteCompany(int id) {
+        CompanyEntity companyEntity = companyService.getCompanyById(id);
+        companyService.deleteCompany(companyEntity);
+    }
+
+    @Override
+    public void deleteAllCompany(List<CompanyDTO> companyDTOList) {
+        List<CompanyEntity> companyEntityList = companyReverseConverter.convertAll(companyDTOList);
+        companyService.deleteAllCompany(companyEntityList);
+
+    }
+
+
+    @Override
+    public void atomicUpdateCompany(CompanyDTO companyDTO) {
+        CompanyEntity companyEntity = companyService.getCompanyById(companyDTO.getId());
+        companyEntity = companyAtomicReverseConverter.converter(companyDTO, companyEntity);
+        companyService.updateCompany(companyEntity);
+    }
+
+    @Override
+    public void bulkUpdateCompany(CompanyDTO companyDTO) {
+
+        List<CompanyDTO> companyDTOList = listCompanies();
+
+        for (CompanyDTO dto : companyDTOList) {
+            companyDTO.setId(dto.getId());
+            CompanyEntity companyEntity = companyReverseConverter.converter(companyDTO);
+            companyService.updateCompany(companyEntity);
+        }
+
     }
 }
