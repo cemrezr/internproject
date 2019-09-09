@@ -6,8 +6,6 @@ import java.util.List;
 
 public interface CompanyFacade {
 
-
-
     public void saveCompany(CompanyDTO companyDTO);
 
     public void updateCompany(CompanyDTO companyDTO);

@@ -4,7 +4,8 @@
 
 <template:page>
 
-    <table class="table table-striped" style="width: 95%;position:absolute;top:94px;left:33px;right:33px" border="3" bordercolor="#c5c6c7"  >
+    <table class="table table-striped" style="width: 95%;position:absolute;top:94px;left:33px;right:33px" border="3"
+           bordercolor="#c5c6c7">
         <thead>
         <tr>
             <th scope="col" style="width: 20%">Name</th>
@@ -44,7 +45,7 @@
             <td colspan="5">
                 <c:url var="addLink" value="/company/add">
                 </c:url>
-                <a class = "btn btn-outline-success btn-lg btn-block" href="${addLink}"/>Add</a>
+                <a class="btn btn-outline-success btn-lg btn-block" href="${addLink}"/>Add</a>
             </td>
         </tr>
 
