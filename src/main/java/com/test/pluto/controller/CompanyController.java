@@ -21,12 +21,10 @@ import java.util.List;
 @RestController
 public class CompanyController {
 
-
     @Autowired(required = true)
     private CompanyFacade companyFacade;
 
     private Logger logger = LoggerFactory.getLogger(CompanyController.class);
-
 
     public void setCompanyFacade(CompanyFacade cf) {
         this.companyFacade = cf;
@@ -38,8 +36,6 @@ public class CompanyController {
         List<CompanyDTO> companyDTOList = companyFacade.listCompanies();
         return companyDTOList;
     }
-
-
 
 
     @PostMapping(value = "", produces = "application/json", consumes = "application/json")
@@ -72,8 +68,6 @@ public class CompanyController {
         return companyDTO;
     }
 
-
-
     @DeleteMapping(value = "/{id}", produces = "application/json", consumes = "application/json")
     @ResponseBody
     public void deleteCompany(@PathVariable("id") int id) {
@@ -94,6 +88,5 @@ public class CompanyController {
     public void deleteAllCompanies(@RequestBody List<CompanyDTO> companyDTOList){
         companyFacade.deleteAllCompany(companyDTOList);
     }
-
 
 }
